@@ -2,12 +2,12 @@
 {% block content %}
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+form { border: 10px solid #f1f1f1;}
 
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px 5px;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -47,14 +47,14 @@ button:hover {
   padding: 16px;
 }
 
-span.psw {
+span.password {
   float: right;
   padding-top: 16px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-  span.psw {
+  span.password {
      display: block;
      float: none;
   }
@@ -64,9 +64,11 @@ span.psw {
 }
 </style>
 
-
+<br> 
 
 <h2>Please Login</h2>
+
+<br> 
 
 <form action="" method="post">
 
@@ -87,7 +89,7 @@ span.psw {
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
+    <a href="/welcome"><button type="button" class="cancelbtn" value="Cancel">Cancel</button></a>
     <span class="password">Forgot <a href="#">password?</a></span>
   </div>
 </form>
