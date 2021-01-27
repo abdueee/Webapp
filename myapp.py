@@ -34,10 +34,24 @@ def login():
             error = 'Invalid Credentials. Please try again.'
         else:
             session['logged_in'] = True
-            flash('you were just logged in!')
+            flash("you are now logged in!")
             return redirect(url_for('home'))
     return render_template('login.html', error=error)
 
+    
+@app.route('/signup', methods=['GET', 'POST'])
+def signup(): 
+    error = None
+    if request.method == 'POST':
+        if request.form['psw'] != request.form['pswrepeat']:
+            error = 'Password Must Match!.'
+        else:
+            session['logged_in'] = True
+            flash("you are now logged in!")
+            return redirect(url_for('home'))
+    return render_template('signup.html', error=error)
+   
+    
 @app.route('/logout')
 @login_required
 def logout():
